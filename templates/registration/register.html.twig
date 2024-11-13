@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}S'inscrire{% endblock %}
 
 {% block body %}
 
@@ -34,7 +34,9 @@
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.name) }}
         {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.delivery_address) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Mot de passe:'
         }) }}
@@ -42,6 +44,15 @@
 
         <button type="submit" class="btn btn btn-secondary">Créer un compte</button>
     {{ form_end(registrationForm) }}
+    </div>
+    <div>
+        <div>
+            <h2>Déjà inscrit ?</h2>
+        </div>
+
+        <div>
+             <a href="http://127.0.0.1:8000/login" ><button class="btn btn btn-secondary">Se Connecter</button></a>
+        </div>
     </div>
 </main>
 
