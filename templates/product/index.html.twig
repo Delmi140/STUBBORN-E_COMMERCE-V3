@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Acceuil{% endblock %}
+{% block title %}Hello ProductController!{% endblock %}
 
 {% block body %}
+
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="http://127.0.0.1:8000/">
@@ -22,20 +24,15 @@
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/product">Boutique</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Panier</a>
-        </li>
       </ul>
     </div>
-    
   </div>
 </nav>
 
-
 <main>
-    <div><h1>Page d'Acceuil</h1></div>
+
     <div>
-         <h2>Produits</h2>
+         <h1>Produits</h1>
     </div>
     <div class="row">
 
@@ -45,18 +42,19 @@
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Nom: {{ product.name }}</h5>
+            <p class="card-text">Tailles: </p>
             <p class="card-text"><strong> Prix: {{(product.price / 100)|number_format(2,) }} € </strong></p>
-            <a href="#" class="btn btn-primary">voir</a>
-            
+         <a href="#" class="btn btn-primary">voir</a>
         </div>
     </div>
-    
 
     {% endfor %}
 
     </div>
 
+
 </main>
+
 
 <footer>
     <div>
@@ -66,6 +64,9 @@
         <p>Slogan: Don't compromise on your look</p>
     </div>
 </footer>
+
+
+
 
 
 {% endblock %}
