@@ -27,6 +27,11 @@ class Size
     #[ORM\OneToMany(targetEntity: SweatShirts::class, mappedBy: 'size')]
     private Collection $sweatShirts;
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function __construct()
     {
         $this->sweatShirts = new ArrayCollection();
